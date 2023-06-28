@@ -1,0 +1,80 @@
+#chart-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;  
+    align-items: center;
+    justify-content: center;
+}
+
+#country-pie-chart {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#country-pie-chart svg text {
+    font-size: 0.25em;
+    /* font-size: 10px; */
+}
+
+#city-bar-chart {
+    max-width: 400px;
+    max-height: 400px;
+    /* align-self: center;
+    justify-content: center; */
+}
+
+#city-tree-map {
+    max-width: 400px;
+    max-height: 400px;
+    grid-column: 2;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* align-self: center;
+    justify-content: center; */
+}
+
+#city-tree-map svg text {
+    /* font-size: 20px; */
+    font-size: 0.25em;
+}
+
+.x-axis text {
+    /* font-size: 5px; */
+    font-size: 0.25em;
+    transform: rotate(-15deg) translate(0, 1px);
+    text-align: center;
+    position: relative;
+}
+
+.x-axis .domain {
+    stroke-width: 0.5;
+}
+
+.x-axis line {
+    stroke-width: 0.5;
+}
+
+.y-axis text {
+    /* font-size: 10px; */
+    font-size: 0.25em;
+    /* transform: rotate(275deg); */
+    /* text-align: center; */
+}
+
+.y-axis line {
+    stroke-width: 0.5;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
