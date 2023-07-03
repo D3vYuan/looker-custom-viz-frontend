@@ -76,6 +76,12 @@ countryMouseOut = (evt) => {
     }    
 }
 
+function refreshChart(element_id, look_chart){
+    const element = document.getElementById(element_id);
+    removeChildElements(element);
+    element.append(look_chart);
+}
+
 function loadCountryChartSpinner(){
     const chart_pie_element = document.getElementById("country-pie-chart");
     removeChildElements(chart_pie_element);
@@ -101,10 +107,7 @@ async function loadCountryChart(url) {
     look_json = transformCountryJson(look_data["response"]);
     top_n_json = await extractTopItems(look_json, 10);
     look_chart = await plotPieChart(top_n_json);
-
-    const country_pie_element = document.getElementById("country-pie-chart");
-    removeChildElements(country_pie_element);
-    country_pie_element.append(look_chart);
+    refreshChart("country-pie-chart", look_chart)
 
     // Add a mouse hover event listener
     // look_chart.addEventListener('mouseover', countryMouseOver);
@@ -136,10 +139,8 @@ function loadCityBarChart(look_data){
     look_json = transformCityJson(look_data);
     top_n_json = extractTopItems(look_json, 10);
     look_chart = plotBarChart(top_n_json);
-    
-    const chart_bar_element = document.getElementById("city-bar-chart");
-    removeChildElements(chart_bar_element);
-    chart_bar_element.append(look_chart);
+
+    refreshChart("city-bar-chart", look_chart);
 }
 
 function loadCityTreeMap(look_data){
@@ -148,9 +149,7 @@ function loadCityTreeMap(look_data){
     top_n_json = extractTopItems(look_json, 10);
     look_chart = plotTreeMap(top_n_json);
 
-    const city_tree_element = document.getElementById("city-tree-map");
-    removeChildElements(city_tree_element);
-    city_tree_element.append(look_chart);
+    refreshChart("city-tree-map", look_chart);
 }
 
 function loadCityMarimekkoMap(look_data){
@@ -159,9 +158,7 @@ function loadCityMarimekkoMap(look_data){
     top_n_json = extractTopItems(look_json, 10);
     look_chart = plotMarimekkoMap(top_n_json);
 
-    const city_tree_element = document.getElementById("city-tree-map");
-    removeChildElements(city_tree_element);
-    city_tree_element.append(look_chart);
+    refreshChart("city-tree-map", look_chart);
 }
 
 async function loadCityChart(url, filter) {
