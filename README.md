@@ -62,7 +62,7 @@ The following are some of the requirements:
 
 - Showcase the drilldown of visualization for `Looker`, in this case study we are drilling down from *Country* to *City*
 
-`NOTE:` This repository is the front, while the other [repository][ref-looker-custom-viz-backend] is the backend.
+`NOTE:` This repository is the frontend, while the other [repository][ref-looker-custom-viz-backend] is the backend.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
